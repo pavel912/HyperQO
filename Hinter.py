@@ -75,7 +75,7 @@ class Hinter:
         self.hinter_times += 1
         plan_json_PG = pgrunner.getCostPlanJson(sql)
         self.samples_plan_with_time = []
-        mask = (torch.rand(1,config.head_num,device = config.device)<0.9).long()
+        mask = (torch.rand(1,config.head_num,device = config.device)<0.9).float() #.long()
         
         if config.cost_test_for_debug:
             self.pg_runningtime_list.append(pgrunner.getCost(sql)[0])
@@ -173,7 +173,7 @@ class Hinter:
     def predictWithUncertaintyBatch(self,plan_jsons,sql_vec):
         sql_feature = self.model.value_network.sql_feature(sql_vec)
         import torchfold
-        fold = torchfold.Fold(cuda=True)
+        fold = torchfold.Fold(cuda=False)
         res = []
         multi_list = []
         for plan_json in plan_jsons:

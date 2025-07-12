@@ -5,7 +5,7 @@ class Config:
         self.datafile = 'JOBqueries.workload'
         self.schemaFile = "schema.sql"
         self.database = 'imdb'
-        self.user = 'postgres'
+        self.user = 'pavel'
         self.password = ""
         self.dataset = 'JOB'
         self.userName = self.user
