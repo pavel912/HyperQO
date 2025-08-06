@@ -6,9 +6,10 @@ from sql2fea import TreeBuilder,value_extractor
 from NET import TreeNet
 from sql2fea import Sql2Vec
 from TreeLSTM import SPINN
+import time
 
 sys.stdout = open(config.log_file, "w")
-random.seed(113)
+random.seed(42)
 with open(config.queries_file) as f:
     import json
     queries = json.load(f)
@@ -37,10 +38,13 @@ s3 = 0
 s4 = 0
 s_pg = 0
 s_hinter = 0
+random.shuffle(queries)
 for epoch in range(1):
     for idx,x in enumerate(queries[:]):
         print('----',idx,'-----')
+        print(f"Execution start: {time.time()}")
         pg_plan_time,pg_latency,mcts_time,hinter_plan_time,MPHE_time,hinter_latency,actual_plans,actual_time = hinter.hinterRun(x[0])
+        print(f"Execution end: {time.time()}")
         pg_latency/=1000
         hinter_latency/=1000
         pg_plan_time/=1000
