@@ -15,7 +15,7 @@ with open(config.queries_file) as f:
 
 tree_builder = TreeBuilder()
 sql2vec = Sql2Vec()
-value_network = SPINN(head_num=config.head_num, input_size=7+2, hidden_size=config.hidden_size, table_num = 50,sql_size = 40*40+config.max_column).to(config.device)
+value_network = SPINN(head_num=config.head_num, input_size=config.input_size, hidden_size=config.hidden_size, table_num = 50,sql_size = config.mcts_input_size).to(config.device)
 for name, param in value_network.named_parameters():
     from torch.nn import init
     if len(param.shape)==2:
