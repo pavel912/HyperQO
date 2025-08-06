@@ -30,7 +30,7 @@ class Config:
         self.mcts_v = 1.1
         self.searchFactor = 4
         self.U_factor = 0.0
-        self.log_file = 'log_c3_h64_s4_t3.txt'
+        self.log_file = "/home/pavel/results/hybrid_run_log.txt" #'log_c3_h64_s4_t3.txt'
         self.latency_file = 'latency_record.txt'
         self.queries_file = 'workload/JOB_selected.json'
         self.id2aliasname = {1: 'it3', 2: 'it5', 3: 'mk', 4: 'it1', 5: 'pi', 6: 'an', 7: 't', 8: 'it2', 9: 'ci', 10: 'k', 11: 'n', 12: 'mi1', 13: 'pi1', 14: 'rt', 15: 'mii2', 16: 'it', 17: 'mc', 18: 'ct', 19: 'it4', 20: 'cn', 21: 'mii1', 22: 'mi2', 23: 'kt', 0: 'start'} #{0: 'start', 1: 'chn', 2: 'ci', 3: 'cn', 4: 'ct', 5: 'mc', 6: 'rt', 7: 't', 8: 'k', 9: 'lt', 10: 'mk', 11: 'ml', 12: 'it1', 13: 'it2', 14: 'mi', 15: 'mi_idx', 16: 'it', 17: 'kt', 18: 'miidx', 19: 'at', 20: 'an', 21: 'n', 22: 'cc', 23: 'cct1', 24: 'cct2', 25: 'it3', 26: 'pi', 27: 't1', 28: 't2', 29: 'cn1', 30: 'cn2', 31: 'kt1', 32: 'kt2', 33: 'mc1', 34: 'mc2', 35: 'mi_idx1', 36: 'mi_idx2', 37: 'an1', 38: 'n1', 39: 'a1'}
